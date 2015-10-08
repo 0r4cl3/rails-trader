@@ -9,8 +9,3 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-
-
-oanda_token: "fbbe980f27a54e53785cea613a3cdb31-ca46888fb0a541bc7e6bff6bc0a18506"
-oanda_account: "8205862"
-

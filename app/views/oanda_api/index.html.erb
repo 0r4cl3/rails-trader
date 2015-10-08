@@ -1,0 +1,7 @@
+<% 
+client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) 
+account = client.account(Rails.application.secrets.oanda_account).get
+%>
+
+<h1>Account Informations</h1>
+<p>Account balance: <%= account.balance %></p>

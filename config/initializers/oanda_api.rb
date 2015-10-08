@@ -1,3 +1,2 @@
-Oanda.oanda_token = ENV["oanda_token"]
-Oanda.oanda_account = ENV["oanda_account"]
-
+# client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) 
+# account = client.account(Rails.application.secrets.oanda_account).get
