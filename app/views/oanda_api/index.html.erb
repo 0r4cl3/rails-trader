@@ -1,7 +1,15 @@
 <h1>Account Informations</h1>
+
+<h3> Forex calendar </h3>
+<%= render 'fxth' %> 
+
+
+
 <% @candles.each_with_index do |c, i| %>
   <h3>Candle <%= i %></h3>
   <p><%= c.open_mid %></p>         
   <p><%= c.close_mid %></p>        
   <p><%= c.high_mid %></p>
 <% end %>
+
+
