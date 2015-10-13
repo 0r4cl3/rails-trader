@@ -1,26 +1,3 @@
-<% 
-    dst = Time.now.dst?
-    london_time = dst == true ? (Time.now.utc + 3600).hour : Time.now.utc.hour
-    newyork_time = dst == true ? (Time.now.utc - 3600*4).hour : (Time.now.utc - 3600*5).hour
-    tokio_time = (Time.now.utc + (3600 * 9)).hour
-    sydney_time = dst == true ? (Time.now.utc + 3600*11).hour : (Time.now.utc + 3600*10).hour
-
-    @time = Time.now.utc.hour
-
-%>
-
-
-
-
-
-
-<!--
-<p><%= london_time %></p>
-<p><%= newyork_time %></p>
-<p><%= tokio_time %></p>
-<p><%= sydney_time %></p>
--->
-
 <table class="table">
 <tr>
         <td>Time</td>
@@ -51,15 +28,15 @@
 </tr>
     <tr>
         <td>London</td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (london_time >= 8 && london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@london_time >= 8 && @london_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
         <td></td>
         <td></td>
         <td></td>
@@ -83,15 +60,15 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (newyork_time >= 8 && newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@newyork_time >= 8 && @newyork_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
         <td></td>
         <td></td>
         <td></td>
@@ -119,20 +96,20 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (sydney_time >= 8 && sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@sydney_time >= 8 && @sydney_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
         <td></td>
     </tr>
     <tr>
         <td>Tokio</td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time < 17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
         <td></td>
         <td></td>
         <td></td>
@@ -148,13 +125,13 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
-        <td><span class="glyphicon glyphicon-time <%= (tokio_time >= 8 && tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
+        <td><span class="glyphicon glyphicon-time <%= (@tokio_time >= 8 && @tokio_time <17) ? "open" : "closed" %>" aria-hidden="true"></span></td>
     </tr>
 </table>
