@@ -10,6 +10,6 @@ class Rsi
     @candles = client.candles( instrument: "EUR_USD",
                               granularity: @granuality,
                             candle_format: "midpoint",
-                                    start: (Time.now - (3600*10)).utc.to_datetime.rfc3339).get
+                                    start: (Time.now - (3600)).utc.to_datetime.rfc3339).get
   end
 end
