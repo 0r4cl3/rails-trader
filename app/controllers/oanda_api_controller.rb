@@ -3,7 +3,7 @@ class OandaApiController < ApplicationController
 
 
   def index
-    @candles = Rsi.new(@client, granuality: 'M15').fetch_candles
+    @candles = GetCandles.new(@client, granuality: 'M15').fetch_candles
   end
 
   def show

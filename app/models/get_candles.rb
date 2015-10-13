@@ -1,4 +1,4 @@
-class Rsi
+class GetCandles
   attr_reader :candles, :client
 
   def initialize(client, params)
