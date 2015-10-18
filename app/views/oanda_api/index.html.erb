@@ -3,6 +3,9 @@
 <h3> Forex calendar </h3>
 <%= render 'fxth' %> 
 
+
+
+
 <% @candles.each_with_index do |c, i| %>
   <h3>Candle <%= i %></h3>
   <p>complete: <%= c.complete? %></p>
@@ -13,3 +16,7 @@
   <p>time: <%= c.time %></p>
   <p>volume: <%= c.volume %></p>
 <% end %>
+
+
+<%= @london_time %>
+<%= @london_market %>
