@@ -1,12 +1,22 @@
-<% @candles.each_with_index do |c, i| %>
-  <h3>Candle <%= i %></h3>
-  <p>complete: <%= c.complete? %></p>
-  <p>open: <%= c.open_mid %></p>         
-  <p>close: <%= c.close_mid %></p>        
-  <p>high: <%= c.high_mid %></p>
-  <p>low: <%= c.low_mid %></p>
-  <p>time: <%= c.time %></p>
-  <p>volume: <%= c.volume %></p>
-<% end %>
+<div class="row">
+  <% @candles.each_with_index do |c, i| %>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Candle <%= i %></h3>
+        </div>
+        <div class="panel-body">
+          <p>complete: <%= c.complete? %></p>
+          <p>open: <%= c.open_mid %></p>         
+          <p>close: <%= c.close_mid %></p>        
+          <p>high: <%= c.high_mid %></p>
+          <p>low: <%= c.low_mid %></p>
+          <p>time: <%= c.time %></p>
+          <p>volume: <%= c.volume %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= @rsi %>
