@@ -1,0 +1,12 @@
+<% @candles.each_with_index do |c, i| %>
+  <h3>Candle <%= i %></h3>
+  <p>complete: <%= c.complete? %></p>
+  <p>open: <%= c.open_mid %></p>         
+  <p>close: <%= c.close_mid %></p>        
+  <p>high: <%= c.high_mid %></p>
+  <p>low: <%= c.low_mid %></p>
+  <p>time: <%= c.time %></p>
+  <p>volume: <%= c.volume %></p>
+<% end %>
+
+<%= @rsi %>

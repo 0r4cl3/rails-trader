@@ -15,7 +15,7 @@ class OandaApiController < ApplicationController
     @newyork_market = Market.new(@newyork_time).open?
     @tokio_market = Market.new(@tokio_time).open?
 
-
+    @rsi = Rsi.new(@candles).calculate_rsi
   end
 
   def show
