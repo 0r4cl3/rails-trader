@@ -3,7 +3,7 @@ class OandaApiController < ApplicationController
 
 
   def index
-    @candles = GetCandles.new(@client, granuality: 'M15').fetch_candles
+    @candles = GetCandles.new(@client, granularity: 'M15').fetch_candles
     
     @london_time = GetTime.new.london
     @newyork_time = GetTime.new.newyork
