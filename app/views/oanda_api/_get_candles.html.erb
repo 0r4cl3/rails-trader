@@ -1,4 +1,13 @@
 <div class="row">
+  <%= form_tag('/oanda_api', method: :get) do %>
+    <%= select_tag "granuality", options_for_select(@options_for_select, @granuality)%>
+    <%= submit_tag("Granuality")  %>
+  <% end %>
+</div>
+  
+   
+
+<div class="row">
   <% @candles.each_with_index do |c, i| %>
     <div class="col-md-4">
       <div class="panel panel-primary">
@@ -19,4 +28,4 @@
   <% end %>
 </div>
 
-<%= @rsi %>
+ <%= @rsi %>

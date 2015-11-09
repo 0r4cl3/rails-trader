@@ -3,7 +3,9 @@ class OandaApiController < ApplicationController
 
 
   def index
-    @candles = GetCandles.new(@client, granularity: 'M15').fetch_candles
+    @granuality = params[:granuality] || 'M15'
+    @options_for_select = [['M1', 'M1'], ['M15', 'M15'], ['M30', 'M30']]
+    @candles = GetCandles.new(@client, granularity: @granuality).fetch_candles
     
     @london_time = GetTime.new.london
     @newyork_time = GetTime.new.newyork
@@ -20,6 +22,7 @@ class OandaApiController < ApplicationController
 
   def show
   end
+private
 
 
 end
