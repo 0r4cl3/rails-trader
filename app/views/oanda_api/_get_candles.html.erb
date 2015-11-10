@@ -1,9 +1,20 @@
 <div class="row">
-  <%= form_tag('/oanda_api', method: :get) do %>
-    <%= select_tag "granularity", options_for_select(@options_for_granularity, @granularity)  %>
-    <%= select_tag "count", options_for_select(@options_for_count, @count) %>
-    <%= submit_tag("Granuality")  %>
-  <% end %>
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Candle Instruments:</h3>
+      </div>
+      <div class="panel-body">  
+        <%= form_tag('/oanda_api', method: :get) do %>
+          <%= label_tag "Granularity:"  %>
+          <%= select_tag "granularity", options_for_select(@options_for_granularity, @granularity)  %>
+          <%= label_tag "Number of Candles:" %>
+          <%= text_field_tag "count", nil, placeholder: "100" %>
+          <%= submit_tag("Get Candles")  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
   
    
