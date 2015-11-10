@@ -3,9 +3,11 @@ class OandaApiController < ApplicationController
 
 
   def index
-    @granuality = params[:granuality] || 'M15'
-    @options_for_select = [['M1', 'M1'], ['M15', 'M15'], ['M30', 'M30']]
-    @candles = GetCandles.new(@client, granularity: @granuality).fetch_candles
+    @granularity = params[:granularity] || 'M15'
+    @options_for_granularity = [['M1', 'M1'], ['M15', 'M15'], ['M30', 'M30']]
+    @count = params[:count] || 100
+    @options_for_count = [[10, 10], [20, 20]]
+    @candles = GetCandles.new(@client, granularity: @granularity, count: @count).fetch_candles
     
     @london_time = GetTime.new.london
     @newyork_time = GetTime.new.newyork
