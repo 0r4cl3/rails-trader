@@ -1,5 +1,0 @@
-<h1>Account Informations</h1>
-<h3> Forex calendar </h3>
-<%= render 'fxth' %> 
-<%= render 'get_candles' %>
-
