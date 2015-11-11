@@ -3,7 +3,6 @@ class OandaApiController < ApplicationController
 
 
   def index
-    @rsi = Rsi.new(@candles).calculate_rsi
   end
 
   def calendar
@@ -25,6 +24,7 @@ class OandaApiController < ApplicationController
     @count = params[:count] || 100
     @options_for_count = [[10, 10], [20, 20]]
     @candles = GetCandles.new(@client, instrument: @instrument, granularity: @granularity, count: @count).fetch_candles
+    @rsi = Rsi.new(@candles).calculate_rsi 
   end
 
   def show
