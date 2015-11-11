@@ -6,6 +6,8 @@
       </div>
       <div class="panel-body">  
         <%= form_tag('/oanda_api', method: :get) do %>
+          <%= label_tag "Instrument" %>
+          <%= select_tag "instrument", options_for_select(@options_for_instrument, @instrument) %>
           <%= label_tag "Granularity:"  %>
           <%= select_tag "granularity", options_for_select(@options_for_granularity, @granularity)  %>
           <%= label_tag "Number of Candles:" %>
