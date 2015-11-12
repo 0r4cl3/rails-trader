@@ -30,6 +30,7 @@ class OandaApiController < ApplicationController
 
   def show
   end
+
   def account_info
     @account = GetInfo.new(@client, @account_number).fetch_client_info
     @open_orders = @account.open_orders
@@ -37,6 +38,11 @@ class OandaApiController < ApplicationController
     @balance = @account.balance
     @account_currency = @account.account_currency
   end
+
+  def place_order
+    @order = PlaceOrder.new(@client, @account_number).create
+  end
+
 private
 
 
