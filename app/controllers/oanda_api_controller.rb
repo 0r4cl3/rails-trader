@@ -1,5 +1,6 @@
 class OandaApiController < ApplicationController
   before_action { @client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) }  
+  before_action { @account_number = Rails.application.secrets.oanda_account }
 
 
   def index
@@ -28,6 +29,13 @@ class OandaApiController < ApplicationController
   end
 
   def show
+  end
+  def account_info
+    @account = GetInfo.new(@client, @account_number).fetch_client_info
+    @open_orders = @account.open_orders
+    @open_trades = @account.open_trades
+    @balance = @account.balance
+    @account_currency = @account.account_currency
   end
 private
 

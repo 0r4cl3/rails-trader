@@ -5,7 +5,7 @@
         <h3 class="panel-title">Candle Instruments:</h3>
       </div>
       <div class="panel-body">  
-        <%= form_tag('/oanda_api', method: :get) do %>
+        <%= form_tag('/candles', method: :get) do %>
           <%= label_tag "Instrument" %>
           <%= select_tag "instrument", options_for_select(@options_for_instrument, @instrument) %>
           <%= label_tag "Granularity:"  %>
