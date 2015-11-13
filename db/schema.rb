@@ -11,6 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151113150751) do
+
+  create_table "candle_infos", force: :cascade do |t|
+    t.string   "currency_pair"
+    t.string   "granularity"
+    t.string   "candle_format"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string   "instrument"
+    t.string   "displayName"
+    t.float    "pip"
+    t.integer  "maxTradeUnits"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
 end

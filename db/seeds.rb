@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+instruments = Instrument.create([{instrument: "EUR_USD"}, {instrument: "AUD_CAD"}])
+
