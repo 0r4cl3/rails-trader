@@ -7,7 +7,7 @@
       <div class="panel-body">  
         <%= form_tag('/candles', method: :get) do %>
           <%= label_tag "Instrument" %>
-          <%= select_tag "instrument", options_for_select(@options_for_instrument, @instrument) %>
+          <%= select_tag "instrument", options_from_collection_for_select(@instruments, 'instrument') %>
           <%= label_tag "Granularity:"  %>
           <%= select_tag "granularity", options_for_select(@options_for_granularity, @granularity)  %>
           <%= label_tag "Number of Candles:" %>
