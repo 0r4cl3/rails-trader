@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113150751) do
+ActiveRecord::Schema.define(version: 20151116162032) do
 
   create_table "candle_infos", force: :cascade do |t|
     t.string   "currency_pair"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20151113150751) do
     t.string   "candle_format"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "granularities", force: :cascade do |t|
+    t.string   "granularity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "instruments", force: :cascade do |t|

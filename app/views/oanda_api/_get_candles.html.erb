@@ -10,7 +10,7 @@
           <%= select_tag "instrument", options_from_collection_for_select(Instrument.all, "instrument", "instrument") %>
 
           <%= label_tag "Granularity:"  %>
-          <%= select_tag "granularity", options_for_select(@options_for_granularity, @granularity)  %>
+          <%= select_tag "granularity", options_from_collection_for_select(Granularity.all, "granularity", "granularity")  %>
 
           <%= label_tag "Number of Candles:" %>
           <%= text_field_tag "count", nil, placeholder: "100" %>
