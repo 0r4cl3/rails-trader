@@ -17,15 +17,19 @@ class OandaApiController < ApplicationController
     @tokio_market = Market.new(@tokio_time).open?
   end
 
-  def candles 
-    @instrument = params[:instrument] || 'EUR_USD'
-    @options_for_instrument = [['EUR_USD', 'EUR_USD'], ['AUD_CAD', 'AUD_CAD']]
+  def candles
     @granularity = params[:granularity] || 'M15'
     @options_for_granularity = [['M1', 'M1'], ['M15', 'M15'], ['M30', 'M30']]
+
     @count = params[:count] || 100
     @options_for_count = [[10, 10], [20, 20]]
+
+    @instrument = params[:instrument] || 'EUR_USD'
+    @options_for_instrument = Instrument.select(:instrument)
+
     @candles = GetCandles.new(@client, instrument: @instrument, granularity: @granularity, count: @count).fetch_candles
-    @rsi = Rsi.new(@candles).calculate_rsi 
+
+    @rsi = Rsi.new(@candles).calculate_rsi
   end
 
   def show
