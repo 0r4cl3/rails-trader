@@ -1,5 +1,7 @@
-class OandaApiController < ApplicationController
+class OandaApiController < ApplicationController 
+  
   before_action { @client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) }  
+  
   before_action { @account_number = Rails.application.secrets.oanda_account }
 
 
@@ -41,8 +43,8 @@ class OandaApiController < ApplicationController
     @account_currency = @account.account_currency
   end
 
-  def place_order
-    @order = PlaceOrder.new(@client, @account_number).create
+  def orders
+    @order = PlaceOrder.new(@client, @account_number).place
   end
 
 private
