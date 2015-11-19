@@ -23,7 +23,6 @@ class OandaApiController < ApplicationController
     @granularity = params[:granularity] || 'M15'
 
     @count = params[:count] || 100
-    @options_for_count = [[10, 10], [20, 20]]
 
     @instrument = params[:instrument] || 'EUR_USD'
 
@@ -44,7 +43,17 @@ class OandaApiController < ApplicationController
   end
 
   def orders
-    @order = PlaceOrder.new(@client, @account_number).place
+    @instrument = params[:instrument] || "EUR_USD" 
+
+    @type = params[:type] || "market"
+    @options_for_type = [['market', 'market']]
+
+    @side = params[:side] || "buy" 
+    @options_for_side = [['buy', 'buy'], ['sell', 'sell']]
+
+    @units = params[:units] || 100
+
+    @order = Order.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units).place
   end
 
 private
