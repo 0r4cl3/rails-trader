@@ -19,17 +19,6 @@ class OandaApiController < ApplicationController
     @tokio_market = Market.new(@tokio_time).open?
   end
 
-  def candles
-    @granularity = params[:granularity] || 'M15'
-
-    @count = params[:count] || 100
-
-    @instrument = params[:instrument] || 'EUR_USD'
-
-    @candles = GetCandles.new(@client, instrument: @instrument, granularity: @granularity, count: @count).fetch_candles
-
-    @rsi = Rsi.new(@candles).calculate_rsi
-  end
 
   def show
   end
