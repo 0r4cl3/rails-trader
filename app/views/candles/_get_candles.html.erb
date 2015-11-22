@@ -5,7 +5,7 @@
         <h3 class="panel-title">Candle Instruments:</h3>
       </div>
       <div class="panel-body">  
-        <%= form_tag('/candles', method: :get) do %>
+        <%= form_tag(candles_path, method: :get) do %>
           <%= label_tag "Instrument" %>
           <%= select_tag "instrument", options_from_collection_for_select(Instrument.all, "instrument", "instrument") %>
 
@@ -45,4 +45,3 @@
   <% end %>
 </div>
 
- <%= @rsi %>

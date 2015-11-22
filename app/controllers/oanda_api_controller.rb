@@ -1,7 +1,7 @@
-class OandaApiController < ApplicationController
+class OandaApiController < ApplicationController 
+  
   before_action { @client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) }  
   before_action { @account_number = Rails.application.secrets.oanda_account }
-
 
   def index
   end
@@ -17,18 +17,6 @@ class OandaApiController < ApplicationController
     @tokio_market = Market.new(@tokio_time).open?
   end
 
-  def candles
-    @granularity = params[:granularity] || 'M15'
-
-    @count = params[:count] || 100
-    @options_for_count = [[10, 10], [20, 20]]
-
-    @instrument = params[:instrument] || 'EUR_USD'
-
-    @candles = GetCandles.new(@client, instrument: @instrument, granularity: @granularity, count: @count).fetch_candles
-
-    @rsi = Rsi.new(@candles).calculate_rsi
-  end
 
   def show
   end
@@ -41,9 +29,6 @@ class OandaApiController < ApplicationController
     @account_currency = @account.account_currency
   end
 
-  def place_order
-    @order = PlaceOrder.new(@client, @account_number).create
-  end
 
 private
 

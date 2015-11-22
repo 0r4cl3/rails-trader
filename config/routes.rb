@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :oanda_api
+  resources :candles, only: [:index]
+  resources :orders
+  
   root 'oanda_api#index'
   get 'calendar' => 'oanda_api#calendar'
-  get 'candles' => 'oanda_api#candles'
   get 'account_info' => 'oanda_api#account_info'
   post 'place_order' => 'oanda_api#place_order'
   # The priority is based upon order of creation: first created -> highest priority.
