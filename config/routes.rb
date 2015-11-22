@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :oanda_api
-  root 'oanda_api#index'
   resources :candles, only: [:index]
+  resources :orders
+  
+  root 'oanda_api#index'
   get 'calendar' => 'oanda_api#calendar'
   get 'account_info' => 'oanda_api#account_info'
-  get 'place_order' => 'oanda_api#place_order'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,5 @@
 class CandlesController < ApplicationController
+
   before_action { @client = OandaAPI::Client::TokenClient.new(:practice, Rails.application.secrets.oanda_token) }  
   before_action { @account_number = Rails.application.secrets.oanda_account }
   
