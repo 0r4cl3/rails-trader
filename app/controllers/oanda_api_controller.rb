@@ -29,15 +29,6 @@ class OandaApiController < ApplicationController
     @account_currency = @account.account_currency
   end
 
-  def orders
-    @instrument = params[:instrument] || "EUR_USD" 
-    @type = params[:type] || "market"
-    @options_for_type = [['market', 'market']]
-    @side = params[:side] || "buy" 
-    @options_for_side = [['buy', 'buy'], ['sell', 'sell']]
-    @units = params[:units] || 100
-    @order = Order.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units).place
-  end
 
 private
 

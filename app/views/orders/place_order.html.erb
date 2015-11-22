@@ -1,7 +1,0 @@
-<h1>Place order</h1>
-
-<%= form_tag('/place_order', method: :post) do %>
-  <%= label_tag 'Instrument' %>
-  <%= select_tag 'instrument', options_from_collection_for_select(Instrument.all, 'instrument', 'instrument') %>
-  <%= %>
-<% end %>
