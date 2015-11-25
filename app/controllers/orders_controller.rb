@@ -6,20 +6,17 @@ class OrdersController < ApplicationController
   def index
   end
 
-  def create
-    @order = Order.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units)
-    @order.place
+  def new
+    @options_for_type = [['market', 'market']]
+    @options_for_side = [['buy', 'buy'], ['sell', 'sell']]
+  end
 
+  def create
+    @instrument = params[:instrument]
+    @type = params[:type]
+    @side = params[:side] 
+    @units = params[:units]
+    @order = Order.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units).place
     redirect_to orders_path
   end
-
-  def new
-    @instrument = params[:instrument] 
-    @type = params[:type] 
-    @options_for_type = [['market', 'market']]
-    @side = params[:side]
-    @options_for_side = [['buy', 'buy'], ['sell', 'sell']]
-    @units = params[:units]
-  end
-
 end

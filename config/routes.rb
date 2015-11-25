@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root 'oanda_api#index'
   get 'calendar' => 'oanda_api#calendar'
   get 'account_info' => 'oanda_api#account_info'
-  post 'place_order' => 'oanda_api#place_order'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

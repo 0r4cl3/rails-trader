@@ -1,17 +1,18 @@
 <h1>Place order</h1>
 
-<%= form_for :order, url: orders_path do |f| %>
-  <%= f.label 'Instrument' %>
-  <%= f.select 'instrument', options_from_collection_for_select(Instrument.all, 'instrument', 'instrument') %>
+<%= form_tag(orders_path,  method: :post) do %>
 
-  <%= f.label 'Type'%>
-  <%= f.select 'type', options_for_select(@options_for_type, @type) %>
+  <%= label_tag 'Instrument' %>
+  <%= select_tag 'instrument', options_from_collection_for_select(Instrument.all, 'instrument', 'instrument') %>
 
-  <%= f.label 'Side' %>
-  <%= f.select 'side', options_for_select(@options_for_side, @side) %>
+  <%= label_tag 'Type'%>
+  <%= select_tag 'type', options_for_select(@options_for_type, @type) %>
 
-  <%= f.label 'Units' %>
-  <%= f.text_field 'units' %>
+  <%= label_tag 'Side' %>
+  <%= select_tag 'side', options_for_select(@options_for_side, @side) %>
 
-  <%= f.submit("Place Order") %>
+  <%= label_tag 'Units' %>
+  <%= text_field_tag 'units' %>
+
+  <%= submit_tag("Place Order") %>
 <% end %>
