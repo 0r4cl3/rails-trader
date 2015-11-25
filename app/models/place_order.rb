@@ -1,5 +1,6 @@
-class Order
-  attr_reader :account
+class PlaceOrder
+  attr_reader :client
+
   def initialize (client, account_number, params)
     @client = client
     @account_number = account_number
@@ -11,10 +12,10 @@ class Order
 
   def place
     @order = client.account(@account_number).order(
-                                     instrument: "EUR_USD",
-                                     type: "market",
-                                     side: "buy",
-                                     units: 1_000).create
+                                     instrument: @instrument,
+                                     type: @type,
+                                     side: @side,
+                                     units: @units).create
   end
 end
 

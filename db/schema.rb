@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116162032) do
+ActiveRecord::Schema.define(version: 20151125182724) do
 
   create_table "candle_infos", force: :cascade do |t|
     t.string   "currency_pair"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20151116162032) do
     t.integer  "maxTradeUnits"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "trade_id",   limit: 8
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end
