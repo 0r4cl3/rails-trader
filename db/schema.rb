@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 20151125182724) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "trade_id",   limit: 8
+    t.string   "instrument"
+    t.string   "type"
+    t.string   "side"
+    t.integer  "units",      limit: 8
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

@@ -23,6 +23,9 @@ class OrdersController < ApplicationController
 
     @order = Order.new
     @order.trade_id = @position.trade_opened.id
+    @order.instrument = @instrument
+    @order.side = @side
+    @order.units = @units
     @order.save
   end
   
@@ -37,6 +40,5 @@ class OrdersController < ApplicationController
 
     redirect_to orders_path
   end
-
 
 end
