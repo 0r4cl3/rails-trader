@@ -22,12 +22,21 @@ class OrdersController < ApplicationController
     redirect_to orders_path
 
     @order = Order.new
-    @order.trade_id = @place_order.trade_opened.id
+    @order.trade_id = @position.trade_opened.id
     @order.save
   end
   
   def show
     @order = Order.find(params[:id])
   end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @trade = @client.account(@account_number).trade(@order.trade_id).close
+    @order.destroy
+
+    redirect_to orders_path
+  end
+
 
 end
