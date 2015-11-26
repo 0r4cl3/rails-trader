@@ -3,7 +3,6 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.integer :trade_id, limit: 8
       t.string :instrument
-      t.string :type
       t.string :side
       t.integer :units, limit: 8
 
