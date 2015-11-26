@@ -1,4 +1,4 @@
-class PlaceOrder
+class Position
   attr_reader :client
 
   def initialize (client, account_number, params)
@@ -16,6 +16,9 @@ class PlaceOrder
                                      type: @type,
                                      side: @side,
                                      units: @units).create
+  end
+
+  def close
   end
 end
 

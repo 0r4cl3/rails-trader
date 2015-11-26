@@ -17,7 +17,8 @@ class OrdersController < ApplicationController
     @type = params[:type]
     @side = params[:side] 
     @units = params[:units]
-    @place_order = PlaceOrder.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units).place
+    @position = Position.new(@client, @account_number, instrument: @instrument, type: @type, side: @side, units: @units).place
+
     redirect_to orders_path
 
     @order = Order.new
