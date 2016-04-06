@@ -4,8 +4,6 @@ class AnalisysController < ApplicationController
 
   def index
     @sma10 = Sma.new(@client, 10).sma
-    @output = @sma10
     @sma30 = Sma.new(@client, 30).sma
-    @output30 = @sma30
   end
 end
