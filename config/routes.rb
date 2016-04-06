@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :oanda_api
   resources :candles, only: [:index]
   resources :orders
+  resources :analisys, only: [:index]
   
   root 'oanda_api#index'
   get 'calendar' => 'oanda_api#calendar'
