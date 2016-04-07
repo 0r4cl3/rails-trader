@@ -3,7 +3,6 @@ class AnalisysController < ApplicationController
   before_action { @account_number = Rails.application.secrets.oanda_account }
 
   def index
-    @sma10 = Sma.new(@client, 10).sma
-    @sma30 = Sma.new(@client, 30).sma
+    @rsi = Rsi.new(@client).calculate_rsi
   end
 end
